@@ -6,5 +6,25 @@
 </head>
 <body>
 	<h1 th:text="'Lista de propietarios'"></h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>APELLIDO</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+		<tr th:each="propietario : ${propietarios}">
+			<td th:text="${propietario?.id}"></td>
+			<td th:text="${propietario?.nombre}"></td>
+			<td th:text="${propietario?.apellido}"></td>
+		</tr>		
+		</tbody>
+		
+	</table>
+	
 </body>
 </html>

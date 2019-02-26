@@ -17,7 +17,7 @@ public class PropietarioServicioMap extends AbstractMapService<Propietario, Long
 
 	@Override
 	public Set<Propietario> findAll() {
-		return this.findAll();
+		return super.findAll();
 	}
 
 	@Override

@@ -6,5 +6,25 @@
 </head>
 <body>
 	<h1 th:text="'Lista de veterinarios'"></h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>APELLIDO</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+		<tr th:each="veterinario : ${veterinarios}">
+			<td th:text="${veterinario?.id}"></td>
+			<td th:text="${veterinario?.nombre}"></td>
+			<td th:text="${veterinario?.apellido}"></td>
+		</tr>		
+		</tbody>
+		
+	</table>
+	
 </body>
 </html>
