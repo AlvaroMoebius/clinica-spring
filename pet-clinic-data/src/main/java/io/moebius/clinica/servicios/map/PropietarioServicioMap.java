@@ -3,9 +3,9 @@ package io.moebius.clinica.servicios.map;
 import java.util.Set;
 
 import io.moebius.clinica.modelos.Propietario;
-import io.moebius.clinica.servicios.CrudService;
+import io.moebius.clinica.servicios.PropietarioServicio;
 
-public class PropietarioServicioMap extends AbstractMapService<Propietario, Long> implements CrudService<Propietario, Long>{
+public class PropietarioServicioMap extends AbstractMapService<Propietario, Long> implements PropietarioServicio{
 
 	@Override
 	public Propietario save(Propietario propietario) {
@@ -31,6 +31,13 @@ public class PropietarioServicioMap extends AbstractMapService<Propietario, Long
 	public void delete(Propietario propietario) {
 		super.delete(propietario);
 	}
+
+	@Override
+	public Propietario findByApellido(String apellido) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 	
 
