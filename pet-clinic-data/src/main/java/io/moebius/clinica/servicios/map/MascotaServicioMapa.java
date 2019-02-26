@@ -3,9 +3,9 @@ package io.moebius.clinica.servicios.map;
 import java.util.Set;
 
 import io.moebius.clinica.modelos.Mascota;
-import io.moebius.clinica.servicios.CrudService;
+import io.moebius.clinica.servicios.MascotaServicio;
 
-public class MascotaServicioMapa extends AbstractMapService<Mascota, Long> implements CrudService<Mascota, Long>{
+public class MascotaServicioMapa extends AbstractMapService<Mascota, Long> implements MascotaServicio{
 
 	@Override
 	public Mascota save(Mascota mascota) {

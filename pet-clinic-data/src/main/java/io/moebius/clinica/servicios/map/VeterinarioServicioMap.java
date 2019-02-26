@@ -3,7 +3,6 @@ package io.moebius.clinica.servicios.map;
 import java.util.Set;
 
 import io.moebius.clinica.modelos.Veterinario;
-import io.moebius.clinica.servicios.CrudService;
 import io.moebius.clinica.servicios.VeterinarioServicio;
 
 public class VeterinarioServicioMap extends AbstractMapService<Veterinario, Long> implements VeterinarioServicio {
