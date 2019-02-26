@@ -12,7 +12,7 @@ public class PropietarioServicioMap extends AbstractMapService<Propietario, Long
 
 	@Override
 	public Propietario save(Propietario propietario) {
-		return super.save(propietario.getId(), propietario);
+		return super.save(propietario);
 	}
 
 	@Override

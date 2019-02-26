@@ -1,14 +1,18 @@
 package io.moebius.clinica.servicios.map;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
-public abstract class AbstractMapService <T, ID>{
+import io.moebius.clinica.modelos.EntidadBase;
+
+public abstract class AbstractMapService <T extends EntidadBase, ID extends Long>{
 	
 	
-	protected Map<ID, T> map = new HashMap<>();
+	protected Map<Long, T> map = new HashMap<>();
 	
 	// Encontrar todos
 	Set<T> findAll(){
@@ -21,8 +25,18 @@ public abstract class AbstractMapService <T, ID>{
 	}
 	
 	// Guardar
-	T save(ID id, T object) {
-		map.put(id, object);
+	T save(T object) {
+		
+		if(object != null) {
+			if(object.getId() == null) {
+				object.setId(getNextId());
+			}	
+			map.put(object.getId(), object);
+		} else {
+			throw new RuntimeException("El objeto no puede ser nulo");
+		}
+		
+
 		return object;
 	}
 	
@@ -34,6 +48,17 @@ public abstract class AbstractMapService <T, ID>{
 	// Borrado por objeto
 	void delete(T object) {
 		map.entrySet().removeIf(entry -> entry.getValue().equals(object));
+	}
+	
+	private long getNextId() {
 		
+		Long nextId = null;
+		
+		try {
+			nextId = Collections.max(map.keySet()) +1;
+		} catch (NoSuchElementException e) {
+			nextId = 1L;
+		}
+		return nextId;
 	}
 }

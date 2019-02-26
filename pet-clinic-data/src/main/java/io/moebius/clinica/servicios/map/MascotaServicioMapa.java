@@ -12,7 +12,7 @@ public class MascotaServicioMapa extends AbstractMapService<Mascota, Long> imple
 
 	@Override
 	public Mascota save(Mascota mascota) {
-		return super.save(mascota.getId(), mascota);
+		return super.save(mascota);
 	}
 
 	@Override

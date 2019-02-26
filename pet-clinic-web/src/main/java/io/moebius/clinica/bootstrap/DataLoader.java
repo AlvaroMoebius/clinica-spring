@@ -28,7 +28,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		// Propietarios
 		Propietario p1 = new Propietario();
-		p1.setId(1L);
 		p1.setNombre("Álvaro");
 		p1.setApellido("González");
 		
@@ -36,7 +35,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		
 		Propietario p2 = new Propietario();
-		p2.setId(2L);
 		p2.setNombre("Carlos");
 		p2.setApellido("Ramírez");
 		
@@ -44,7 +42,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		
 		Propietario p3 = new Propietario();
-		p3.setId(3L);
 		p3.setNombre("Justo");
 		p3.setApellido("Castaño");
 		
@@ -52,7 +49,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		
 		Propietario p4 = new Propietario();
-		p4.setId(4L);
 		p4.setNombre("Martina");
 		p4.setApellido("Oliva");
 		
@@ -63,7 +59,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		// Veterinarios
 		Veterinario v1 = new Veterinario();
-		v1.setId(1L);
 		v1.setNombre("Santiago");
 		v1.setApellido("Carrillo");
 		
@@ -71,7 +66,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		
 		Veterinario v2 = new Veterinario();
-		v2.setId(2L);
 		v2.setNombre("Lommie");
 		v2.setApellido("Thorne");
 		
@@ -79,7 +73,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		
 		Veterinario v3 = new Veterinario();
-		v3.setId(3L);
 		v3.setNombre("Franz");
 		v3.setApellido("Ferdinand");
 		
@@ -87,7 +80,6 @@ public class DataLoader implements CommandLineRunner{
 		
 		
 		Veterinario v4 = new Veterinario();
-		v4.setId(4L);
 		v4.setNombre("José");
 		v4.setApellido("Cuervo");
 		
