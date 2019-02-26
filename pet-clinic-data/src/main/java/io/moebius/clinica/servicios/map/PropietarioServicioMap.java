@@ -2,9 +2,12 @@ package io.moebius.clinica.servicios.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import io.moebius.clinica.modelos.Propietario;
 import io.moebius.clinica.servicios.PropietarioServicio;
 
+@Service
 public class PropietarioServicioMap extends AbstractMapService<Propietario, Long> implements PropietarioServicio{
 
 	@Override

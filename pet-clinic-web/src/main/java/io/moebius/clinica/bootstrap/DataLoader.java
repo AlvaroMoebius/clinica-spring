@@ -16,10 +16,10 @@ public class DataLoader implements CommandLineRunner{
 	private final PropietarioServicio propietarioServicio;
 	private final VeterinarioServicio veterinarioServicio;
 	
-	// Injección de dependencia por constructor
-	public DataLoader() {
-		this.propietarioServicio = new PropietarioServicioMap();
-		this.veterinarioServicio = new VeterinarioServicioMap();
+	// Injección de dependencia por constructor con Spring
+	public DataLoader(PropietarioServicio propietarioServicio, VeterinarioServicio veterinarioServicio) {
+		this.propietarioServicio = propietarioServicio;
+		this.veterinarioServicio = veterinarioServicio;
 	}
 	
 	
