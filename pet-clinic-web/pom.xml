@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
 		<artifactId>sfg-pet-clinic</artifactId>
-		<groupId>guru.springframework</groupId>
+		<groupId>io.moebius</groupId>
 		<version>0.0.5-SNAPSHOT</version>
 	</parent>
 
@@ -23,7 +23,7 @@
 	<dependencies>
 		<dependency>
 			<artifactId>pet-clinic-data</artifactId>
-			<groupId>guru.springframework</groupId>
+			<groupId>io.moebius</groupId>
 			<version>0.0.5-SNAPSHOT</version>
 		</dependency>
 
@@ -81,14 +81,14 @@
 				<groupId>ro.isdc.wro4j</groupId>
 				<artifactId>wro4j-maven-plugin</artifactId>
 				<version>${wro4j.version}</version>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<phase>generate-resources</phase>
 						<goals>
 							<goal>run</goal>
 						</goals>
-					</execution>
-				</executions>
+					</execution> 
+				</executions> -->
 				<configuration>
 					<wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
 					<cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
@@ -102,14 +102,8 @@
 						<artifactId>bootstrap</artifactId>
 						<version>${webjars-bootstrap.version}</version>
 					</dependency>
-					<dependency>
-						<groupId>org.mockito</groupId>
-						<artifactId>mockito-core</artifactId>
-						<version>${mockito.version}</version>
-					</dependency>
 				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
