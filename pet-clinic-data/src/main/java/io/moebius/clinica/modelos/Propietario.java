@@ -1,5 +1,6 @@
 package io.moebius.clinica.modelos;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Propietario extends Persona {
@@ -8,7 +9,7 @@ public class Propietario extends Persona {
 	private String ciudad;
 	private String telefono;
 	
-	private Set<Mascota> mascotas;
+	private Set<Mascota> mascotas = new HashSet<>();
 	
 	// GETTERS & SETTERS
 	public String getDireccion() {

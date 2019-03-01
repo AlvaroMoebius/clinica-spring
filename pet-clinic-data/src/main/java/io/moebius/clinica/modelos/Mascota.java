@@ -4,11 +4,22 @@ import java.time.LocalDate;
 
 public class Mascota extends EntidadBase{
 
+	private String nombre;
     private TipoMascota tipoMascota;
     private Propietario propietario;
     private LocalDate fechaNacimiento;
 
-    public TipoMascota getTipoMascota() {
+    
+    
+    public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public TipoMascota getTipoMascota() {
         return tipoMascota;
     }
 

@@ -1,10 +1,11 @@
 package io.moebius.clinica.modelos;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Veterinario extends Persona {
 	
-	private Set<Especialidad> especialidades;
+	private Set<Especialidad> especialidades = new HashSet<>();
 
 	
 	

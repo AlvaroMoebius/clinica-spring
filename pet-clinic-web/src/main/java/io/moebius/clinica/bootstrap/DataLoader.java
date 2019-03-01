@@ -1,8 +1,11 @@
 package io.moebius.clinica.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import io.moebius.clinica.modelos.Mascota;
 import io.moebius.clinica.modelos.Propietario;
 import io.moebius.clinica.modelos.TipoMascota;
 import io.moebius.clinica.modelos.Veterinario;
@@ -55,7 +58,6 @@ public class DataLoader implements CommandLineRunner{
 		System.out.println("[DATA LOADER] --INFO-- Cargados tipos de mascota.");
 		
 		
-		
 		// Propietarios
 		Propietario p1 = new Propietario();
 		p1.setNombre("Álvaro");
@@ -63,6 +65,21 @@ public class DataLoader implements CommandLineRunner{
 		p1.setDireccion("C/ Pinos");
 		p1.setCiudad("Alcorcón");
 		p1.setTelefono("666999666");
+		
+
+		Mascota m1 = new Mascota();
+		m1.setTipoMascota(guardadoGatoTipoMascota);
+		m1.setPropietario(p1);
+		m1.setNombre("Kafka");
+		m1.setFechaNacimiento(LocalDate.now());	
+		p1.getMascotas().add(m1);
+		
+		Mascota m2 = new Mascota();
+		m2.setTipoMascota(guardadoCanguroTipoMascota);
+		m2.setPropietario(p1);
+		m2.setNombre("Roger");
+		m2.setFechaNacimiento(LocalDate.now());	
+		p1.getMascotas().add(m2);
 		
 		propietarioServicio.save(p1);
 		
@@ -74,6 +91,13 @@ public class DataLoader implements CommandLineRunner{
 		p2.setCiudad("Aluche");
 		p2.setTelefono("321321321");
 		
+		Mascota m3 = new Mascota();
+		m3.setTipoMascota(guardadoLoroTipoMascota);
+		m3.setPropietario(p2);
+		m3.setNombre("Euclides");
+		m3.setFechaNacimiento(LocalDate.now());	
+		p2.getMascotas().add(m3);
+		
 		propietarioServicio.save(p2);
 		
 		
@@ -83,6 +107,13 @@ public class DataLoader implements CommandLineRunner{
 		p3.setDireccion("C/ Normandía");
 		p3.setCiudad("Leganés");
 		p3.setTelefono("111222333");
+
+		Mascota m4 = new Mascota();
+		m4.setTipoMascota(guardadoPerroTipoMascota);
+		m4.setPropietario(p3);
+		m4.setNombre("Toby");
+		m4.setFechaNacimiento(LocalDate.now());	
+		p3.getMascotas().add(m4);
 		
 		propietarioServicio.save(p3);
 		
@@ -93,6 +124,14 @@ public class DataLoader implements CommandLineRunner{
 		p4.setDireccion("C/ Whitecastle");
 		p4.setCiudad("Londres");
 		p4.setTelefono("987654321");
+		
+		Mascota m5 = new Mascota();
+		m5.setTipoMascota(guardadoGatoTipoMascota);
+		m5.setPropietario(p4);
+		m5.setNombre("Bigotes");
+		m5.setFechaNacimiento(LocalDate.now());	
+		p4.getMascotas().add(m5);
+
 		
 		propietarioServicio.save(p4);
 		
