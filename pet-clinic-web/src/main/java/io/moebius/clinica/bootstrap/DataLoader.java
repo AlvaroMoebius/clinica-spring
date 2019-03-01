@@ -4,8 +4,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import io.moebius.clinica.modelos.Propietario;
+import io.moebius.clinica.modelos.TipoMascota;
 import io.moebius.clinica.modelos.Veterinario;
 import io.moebius.clinica.servicios.PropietarioServicio;
+import io.moebius.clinica.servicios.TipoMascotaServicio;
 import io.moebius.clinica.servicios.VeterinarioServicio;
 
 @Component
@@ -13,11 +15,13 @@ public class DataLoader implements CommandLineRunner{
 	
 	private final PropietarioServicio propietarioServicio;
 	private final VeterinarioServicio veterinarioServicio;
+	private final TipoMascotaServicio tipoMascotaServicio;
 	
 	// Injección de dependencia por constructor con Spring
-	public DataLoader(PropietarioServicio propietarioServicio, VeterinarioServicio veterinarioServicio) {
+	public DataLoader(PropietarioServicio propietarioServicio, VeterinarioServicio veterinarioServicio, TipoMascotaServicio tipoMascotaServicio) {
 		this.propietarioServicio = propietarioServicio;
 		this.veterinarioServicio = veterinarioServicio;
+		this.tipoMascotaServicio = tipoMascotaServicio;
 	}
 	
 	
@@ -53,6 +57,30 @@ public class DataLoader implements CommandLineRunner{
 		propietarioServicio.save(p4);
 		
 		System.out.println("[DATA LOADER] --INFO-- Cargados propietarios.");
+		
+		// Tipos de mascota
+		
+		TipoMascota gato = new TipoMascota();
+		gato.setNombre("Gato");
+		
+		tipoMascotaServicio.save(gato);
+		
+		TipoMascota loro = new TipoMascota();
+		gato.setNombre("Loro");
+		
+		tipoMascotaServicio.save(loro);
+		
+		
+		TipoMascota perro = new TipoMascota();
+		gato.setNombre("Perro");
+		
+		tipoMascotaServicio.save(perro);
+		
+		
+		TipoMascota canguro = new TipoMascota();
+		gato.setNombre("Canguro");
+		
+		tipoMascotaServicio.save(canguro);
 		
 		
 		// Veterinarios
