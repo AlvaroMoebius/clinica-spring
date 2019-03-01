@@ -7,8 +7,6 @@ import io.moebius.clinica.modelos.Propietario;
 import io.moebius.clinica.modelos.Veterinario;
 import io.moebius.clinica.servicios.PropietarioServicio;
 import io.moebius.clinica.servicios.VeterinarioServicio;
-import io.moebius.clinica.servicios.map.PropietarioServicioMap;
-import io.moebius.clinica.servicios.map.VeterinarioServicioMap;
 
 @Component
 public class DataLoader implements CommandLineRunner{

@@ -1,0 +1,14 @@
+io\moebius\clinica\servicios\map\AbstractMapService.class
+io\moebius\clinica\modelos\Propietario.class
+io\moebius\clinica\modelos\Veterinario.class
+io\moebius\clinica\servicios\map\VeterinarioServicioMap.class
+io\moebius\clinica\servicios\CrudService.class
+io\moebius\clinica\servicios\VeterinarioServicio.class
+io\moebius\clinica\modelos\Persona.class
+io\moebius\clinica\modelos\TipoMascota.class
+io\moebius\clinica\servicios\map\PropietarioServicioMap.class
+io\moebius\clinica\modelos\EntidadBase.class
+io\moebius\clinica\servicios\MascotaServicio.class
+io\moebius\clinica\servicios\map\MascotaServicioMapa.class
+io\moebius\clinica\servicios\PropietarioServicio.class
+io\moebius\clinica\modelos\Mascota.class
