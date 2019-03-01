@@ -1,4 +1,22 @@
 package io.moebius.clinica.modelos;
 
+import java.util.Set;
+
 public class Veterinario extends Persona {
+	
+	private Set<Especialidad> especialidades;
+
+	
+	
+	
+	public Set<Especialidad> getEspecialidades() {
+		return especialidades;
+	}
+
+	public void setEspecialidades(Set<Especialidad> especialidades) {
+		this.especialidades = especialidades;
+	}
+	
+	
+	
 }
