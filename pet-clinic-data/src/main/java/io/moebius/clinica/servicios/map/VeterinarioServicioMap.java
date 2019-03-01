@@ -4,11 +4,19 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
+import io.moebius.clinica.modelos.Especialidad;
 import io.moebius.clinica.modelos.Veterinario;
+import io.moebius.clinica.servicios.EspecialidadServicio;
 import io.moebius.clinica.servicios.VeterinarioServicio;
 
 @Service
 public class VeterinarioServicioMap extends AbstractMapService<Veterinario, Long> implements VeterinarioServicio {
+
+	private final EspecialidadServicio especialidadServicio;
+
+	public VeterinarioServicioMap(EspecialidadServicio especialidadServicio) {
+		this.especialidadServicio = especialidadServicio;
+	}
 
 	@Override
 	public Veterinario findById(Long id) {
@@ -17,6 +25,17 @@ public class VeterinarioServicioMap extends AbstractMapService<Veterinario, Long
 
 	@Override
 	public Veterinario save(Veterinario veterinario) {
+		if(veterinario.getEspecialidades().size() > 0) {
+			veterinario.getEspecialidades().forEach(especialidad -> {
+				if(especialidad.getId() == null) {
+					Especialidad especialidadGuardada = especialidadServicio.save(especialidad);
+					especialidad.setId(especialidadGuardada.getId());
+				}
+			});
+		}
+		
+		
+		
 		return super.save(veterinario);
 	}
 
@@ -34,7 +53,5 @@ public class VeterinarioServicioMap extends AbstractMapService<Veterinario, Long
 	public void delete(Veterinario object) {
 		super.delete(object);
 	}
-	
-	
 
 }

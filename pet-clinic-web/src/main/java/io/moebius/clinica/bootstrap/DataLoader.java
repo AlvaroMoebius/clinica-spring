@@ -5,10 +5,12 @@ import java.time.LocalDate;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import io.moebius.clinica.modelos.Especialidad;
 import io.moebius.clinica.modelos.Mascota;
 import io.moebius.clinica.modelos.Propietario;
 import io.moebius.clinica.modelos.TipoMascota;
 import io.moebius.clinica.modelos.Veterinario;
+import io.moebius.clinica.servicios.EspecialidadServicio;
 import io.moebius.clinica.servicios.PropietarioServicio;
 import io.moebius.clinica.servicios.TipoMascotaServicio;
 import io.moebius.clinica.servicios.VeterinarioServicio;
@@ -19,17 +21,50 @@ public class DataLoader implements CommandLineRunner{
 	private final PropietarioServicio propietarioServicio;
 	private final VeterinarioServicio veterinarioServicio;
 	private final TipoMascotaServicio tipoMascotaServicio;
+	private final EspecialidadServicio especialidadServicio;
 	
 	// Injección de dependencia por constructor con Spring
-	public DataLoader(PropietarioServicio propietarioServicio, VeterinarioServicio veterinarioServicio, TipoMascotaServicio tipoMascotaServicio) {
+	public DataLoader(PropietarioServicio propietarioServicio, VeterinarioServicio veterinarioServicio, TipoMascotaServicio tipoMascotaServicio, EspecialidadServicio especialidadServicio) {
 		this.propietarioServicio = propietarioServicio;
 		this.veterinarioServicio = veterinarioServicio;
 		this.tipoMascotaServicio = tipoMascotaServicio;
+		this.especialidadServicio = especialidadServicio;
 	}
 	
 	
 	@Override
 	public void run(String... args) throws Exception {
+		
+		int contador = tipoMascotaServicio.findAll().size();
+		
+		// Inicialización de los datos
+		if(contador ==0) { loadData(); }
+		
+		
+	}
+
+	
+	// Cargador de datos
+	private void loadData() {
+		
+		// Especialidades
+		Especialidad radiologia = new Especialidad();
+		radiologia.setDescription("radiología");
+		Especialidad guardadaRadiologia = especialidadServicio.save(radiologia);
+		
+		Especialidad cirugia = new Especialidad();
+		cirugia.setDescription("cirugía");
+		Especialidad guardadaCirugia = especialidadServicio.save(cirugia);
+		
+		Especialidad alimentacion = new Especialidad();
+		alimentacion.setDescription("alimentación");
+		Especialidad guardadaAlimentacion = especialidadServicio.save(alimentacion);
+		
+		Especialidad odontologia = new Especialidad();
+		odontologia.setDescription("odontología");
+		Especialidad guardadaOdontologia = especialidadServicio.save(odontologia);
+		
+		System.out.println("[DATA LOADER] --INFO-- Cargadas especialidades.");
 		
 
 		// Tipos de mascota
@@ -142,6 +177,7 @@ public class DataLoader implements CommandLineRunner{
 		Veterinario v1 = new Veterinario();
 		v1.setNombre("Santiago");
 		v1.setApellido("Carrillo");
+		v1.getEspecialidades().add(guardadaAlimentacion);
 		
 		veterinarioServicio.save(v1);
 		
@@ -149,6 +185,7 @@ public class DataLoader implements CommandLineRunner{
 		Veterinario v2 = new Veterinario();
 		v2.setNombre("Lommie");
 		v2.setApellido("Thorne");
+		v2.getEspecialidades().add(guardadaOdontologia);
 		
 		veterinarioServicio.save(v2);
 		
@@ -156,6 +193,7 @@ public class DataLoader implements CommandLineRunner{
 		Veterinario v3 = new Veterinario();
 		v3.setNombre("Franz");
 		v3.setApellido("Ferdinand");
+		v3.getEspecialidades().add(guardadaCirugia);
 		
 		veterinarioServicio.save(v3);
 		
@@ -163,13 +201,11 @@ public class DataLoader implements CommandLineRunner{
 		Veterinario v4 = new Veterinario();
 		v4.setNombre("José");
 		v4.setApellido("Cuervo");
+		v4.getEspecialidades().add(guardadaRadiologia);
 		
 		veterinarioServicio.save(v4);
 		
 		System.out.println("[DATA LOADER] --INFO-- Cargados veterinarios.");
-		
-		
-		// 
 	}
 
 }
