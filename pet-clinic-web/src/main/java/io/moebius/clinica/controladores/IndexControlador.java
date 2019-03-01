@@ -11,4 +11,11 @@ public class IndexControlador {
 	public String index() {
 		return "index";
 	}
+	
+	
+	@RequestMapping("/oups")
+	public String manejadorOups() {
+		
+		return "noimplementado";
+	}
 }

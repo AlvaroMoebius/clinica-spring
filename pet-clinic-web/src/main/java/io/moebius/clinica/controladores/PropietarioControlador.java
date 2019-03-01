@@ -22,4 +22,10 @@ public class PropietarioControlador {
 		
 		return "propietarios/index";
 	}
+	
+	@RequestMapping("/buscar")
+	public String buscarPropietarios() {
+		
+		return "noimplementado";
+	}
 }
