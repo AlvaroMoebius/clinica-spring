@@ -43,20 +43,21 @@
                         <span th:text="${text}">Template</span>
                       </a>
                   </li>
-  
-                  <li th:replace="::menuItem ('/','home','home page','home','Home')">
+                  
+                  <!-- <li th:replace="::menuItem ('/directorio','nombreElemento','descripciónAlt','icono','Texto')"> -->
+                  <li th:replace="::menuItem ('/','home','Página de inicio','home','Inicio')">
                       <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                      <span>Home</span>
+                      <span>Inicio</span>
                   </li>
   
-                  <li th:replace="::menuItem ('/propietarios/find','propietarios','find propietarios','search','Find propietarios')">
+                  <li th:replace="::menuItem ('/propietarios/index','propietarios','Encontrar propietarios','search','Buscar propietarios')">
                       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                      <span>Find propietarios</span>
+                      <span>Buscar propietarios</span>
                   </li>
   
-                  <li th:replace="::menuItem ('/vets.html','vets','veterinarians','th-list','Veterinarians')">
+                  <li th:replace="::menuItem ('/veterinarios/index','veterinarios','Listado veterinarios','th-list','Veterinarios')">
                       <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                      <span>Veterinarians</span>
+                      <span>Veterinarios</span>
                   </li>
   
                   <li th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','warning-sign','Error')">
