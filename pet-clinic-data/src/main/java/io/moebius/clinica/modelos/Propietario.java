@@ -3,12 +3,27 @@ package io.moebius.clinica.modelos;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "propietarios")
 public class Propietario extends Persona {
 	
+	@Column(name = "direccion")
 	private String direccion;
+	
+	@Column(name = "ciudad")
 	private String ciudad;
+	
+	@Column(name = "telefono")
 	private String telefono;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "propietario")
 	private Set<Mascota> mascotas = new HashSet<>();
 	
 	// GETTERS & SETTERS
