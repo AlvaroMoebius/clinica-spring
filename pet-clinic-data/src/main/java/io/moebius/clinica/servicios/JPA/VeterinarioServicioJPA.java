@@ -3,6 +3,7 @@ package io.moebius.clinica.servicios.JPA;
 import java.util.Set;
 import java.util.HashSet;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import io.moebius.clinica.modelos.Veterinario;
@@ -10,9 +11,9 @@ import io.moebius.clinica.repositorios.VeterinarioRepositorio;
 import io.moebius.clinica.servicios.VeterinarioServicio;
 
 @Service
+@Profile("springJPA")
 public class VeterinarioServicioJPA implements VeterinarioServicio{
 
-	private static final int HashSet = 0;
 	private final VeterinarioRepositorio veterinarioRepositorio;
 	
 	public VeterinarioServicioJPA(VeterinarioRepositorio veterinarioRepositorio) {
