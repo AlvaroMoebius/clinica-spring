@@ -49,19 +49,19 @@ public class DataLoader implements CommandLineRunner{
 		
 		// Especialidades
 		Especialidad radiologia = new Especialidad();
-		radiologia.setDescription("radiología");
+		radiologia.setDescripcion("radiología");
 		Especialidad guardadaRadiologia = especialidadServicio.save(radiologia);
 		
 		Especialidad cirugia = new Especialidad();
-		cirugia.setDescription("cirugía");
+		cirugia.setDescripcion("cirugía");
 		Especialidad guardadaCirugia = especialidadServicio.save(cirugia);
 		
 		Especialidad alimentacion = new Especialidad();
-		alimentacion.setDescription("alimentación");
+		alimentacion.setDescripcion("alimentación");
 		Especialidad guardadaAlimentacion = especialidadServicio.save(alimentacion);
 		
 		Especialidad odontologia = new Especialidad();
-		odontologia.setDescription("odontología");
+		odontologia.setDescripcion("odontología");
 		Especialidad guardadaOdontologia = especialidadServicio.save(odontologia);
 		
 		System.out.println("[DATA LOADER] --INFO-- Cargadas especialidades.");

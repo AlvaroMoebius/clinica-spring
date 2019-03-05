@@ -1,17 +1,23 @@
 package io.moebius.clinica.modelos;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "especialidades")
 public class Especialidad extends EntidadBase{
 	
-	private String description;
+	@Column(name = "descripcion")
+	private String descripcion;
 
 	
-	
-	public String getDescription() {
-		return description;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	
 	

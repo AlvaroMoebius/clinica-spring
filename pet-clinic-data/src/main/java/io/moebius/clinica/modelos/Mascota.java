@@ -16,7 +16,7 @@ public class Mascota extends EntidadBase{
 	private String nombre;
 	
 	@ManyToOne
-	@JoinColumn(name = "tipo_id")
+	@JoinColumn(name = "tipo_mascota_id")
     private TipoMascota tipoMascota;
     
     @ManyToOne
