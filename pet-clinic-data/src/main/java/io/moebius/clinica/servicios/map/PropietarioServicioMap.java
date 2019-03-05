@@ -1,5 +1,6 @@
 package io.moebius.clinica.servicios.map;
 
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -25,8 +26,6 @@ public class PropietarioServicioMap extends AbstractMapService<Propietario, Long
 
 	@Override
 	public Propietario save(Propietario propietario) {
-		
-		Propietario propietarioGuardado = null;
 		
 		if (propietario != null) {
 			if(propietario.getMascotas() != null) {
@@ -73,6 +72,13 @@ public class PropietarioServicioMap extends AbstractMapService<Propietario, Long
 	@Override
 	public void delete(Propietario propietario) {
 		super.delete(propietario);
+	}
+
+
+	@Override
+	public Optional<Propietario> findByApellido(String apellido) {
+		//TO-DO
+		return null;
 	}
 
 	

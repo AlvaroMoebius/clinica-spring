@@ -6,4 +6,6 @@ import io.moebius.clinica.modelos.Propietario;
 
 public interface PropietarioServicio extends CrudService<Propietario, Long> {
 
+	public Optional<Propietario> findByApellido(String apellido);
+
 }
