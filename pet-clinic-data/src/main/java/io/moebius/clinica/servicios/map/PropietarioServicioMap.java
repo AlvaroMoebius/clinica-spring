@@ -75,11 +75,6 @@ public class PropietarioServicioMap extends AbstractMapService<Propietario, Long
 		super.delete(propietario);
 	}
 
-	@Override
-	public Propietario findByApellido(String apellido) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	
 	
