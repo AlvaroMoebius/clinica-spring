@@ -15,6 +15,11 @@ public class VisitaServicioMapa extends AbstractMapService<Visita, Long> impleme
 	@Override
 	public Visita save(Visita visita) {
 		
+		if(visita.getMascota() == null || visita.getMascota().getPropietario() == null
+				|| visita.getMascota().getId() == null || visita.getMascota().getPropietario().getId() == null) {
+			throw new RuntimeException("Visita no valida.");
+		}
+		
 		return super.save(visita);
 	}
 
