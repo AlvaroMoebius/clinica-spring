@@ -10,10 +10,12 @@ import io.moebius.clinica.modelos.Mascota;
 import io.moebius.clinica.modelos.Propietario;
 import io.moebius.clinica.modelos.TipoMascota;
 import io.moebius.clinica.modelos.Veterinario;
+import io.moebius.clinica.modelos.Visita;
 import io.moebius.clinica.servicios.EspecialidadServicio;
 import io.moebius.clinica.servicios.PropietarioServicio;
 import io.moebius.clinica.servicios.TipoMascotaServicio;
 import io.moebius.clinica.servicios.VeterinarioServicio;
+import io.moebius.clinica.servicios.VisitaServicio;
 
 @Component
 public class DataLoader implements CommandLineRunner{
@@ -22,13 +24,15 @@ public class DataLoader implements CommandLineRunner{
 	private final VeterinarioServicio veterinarioServicio;
 	private final TipoMascotaServicio tipoMascotaServicio;
 	private final EspecialidadServicio especialidadServicio;
+	private final VisitaServicio visitaServicio;
 	
 	// Injección de dependencia por constructor con Spring
-	public DataLoader(PropietarioServicio propietarioServicio, VeterinarioServicio veterinarioServicio, TipoMascotaServicio tipoMascotaServicio, EspecialidadServicio especialidadServicio) {
+	public DataLoader(PropietarioServicio propietarioServicio, VeterinarioServicio veterinarioServicio, TipoMascotaServicio tipoMascotaServicio, EspecialidadServicio especialidadServicio, VisitaServicio visitaServicio) {
 		this.propietarioServicio = propietarioServicio;
 		this.veterinarioServicio = veterinarioServicio;
 		this.tipoMascotaServicio = tipoMascotaServicio;
 		this.especialidadServicio = especialidadServicio;
+		this.visitaServicio = visitaServicio;
 	}
 	
 	
@@ -172,6 +176,15 @@ public class DataLoader implements CommandLineRunner{
 		
 		System.out.println("[DATA LOADER] --INFO-- Cargados propietarios.");
 		
+		//Visitas
+		Visita gatoVisita = new Visita();
+		gatoVisita.setMascota(m5);
+		gatoVisita.setFecha(LocalDate.now());
+		gatoVisita.setDescripcion("Recortarle las uñitas.");
+		
+		visitaServicio.save(gatoVisita);
+		
+		System.out.println("[DATA LOADER] --INFO-- Cargadas visitas.");
 		
 		// Veterinarios
 		Veterinario v1 = new Veterinario();
