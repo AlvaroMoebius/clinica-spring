@@ -1,0 +1,6 @@
+spring:
+  messages:
+    basename: messages/messages
+    
+  profiles:    active: springJPA 
+      h2:    console:      enabled: true

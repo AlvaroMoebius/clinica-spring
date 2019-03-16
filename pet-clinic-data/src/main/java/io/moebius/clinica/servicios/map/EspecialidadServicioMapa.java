@@ -2,12 +2,14 @@ package io.moebius.clinica.servicios.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import io.moebius.clinica.modelos.Especialidad;
 import io.moebius.clinica.servicios.EspecialidadServicio;
 
 @Service
+@Profile({"default", "mapa"})
 public class EspecialidadServicioMapa extends AbstractMapService<Especialidad, Long> implements EspecialidadServicio {
 
 	@Override

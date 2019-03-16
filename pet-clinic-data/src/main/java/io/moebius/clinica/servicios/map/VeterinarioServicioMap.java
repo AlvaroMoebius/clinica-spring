@@ -2,6 +2,7 @@ package io.moebius.clinica.servicios.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import io.moebius.clinica.modelos.Especialidad;
@@ -10,6 +11,7 @@ import io.moebius.clinica.servicios.EspecialidadServicio;
 import io.moebius.clinica.servicios.VeterinarioServicio;
 
 @Service
+@Profile({"default", "mapa"})
 public class VeterinarioServicioMap extends AbstractMapService<Veterinario, Long> implements VeterinarioServicio {
 
 	private final EspecialidadServicio especialidadServicio;

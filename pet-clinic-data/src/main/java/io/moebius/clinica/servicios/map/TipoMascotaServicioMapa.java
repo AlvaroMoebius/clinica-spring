@@ -2,12 +2,14 @@ package io.moebius.clinica.servicios.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import io.moebius.clinica.modelos.TipoMascota;
 import io.moebius.clinica.servicios.TipoMascotaServicio;
 
 @Service
+@Profile({"default", "mapa"})
 public class TipoMascotaServicioMapa extends AbstractMapService<TipoMascota, Long> implements TipoMascotaServicio{
 
 	@Override
