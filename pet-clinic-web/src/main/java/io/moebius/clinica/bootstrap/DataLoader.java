@@ -2,6 +2,7 @@ package io.moebius.clinica.bootstrap;
 
 import java.time.LocalDate;
 
+import org.omg.CORBA.PRIVATE_MEMBER;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -104,8 +105,7 @@ public class DataLoader implements CommandLineRunner{
 		p1.setDireccion("C/ Pinos");
 		p1.setCiudad("Alcorcón");
 		p1.setTelefono("666999666");
-		
-
+				
 		Mascota m1 = new Mascota();
 		m1.setTipoMascota(guardadoGatoTipoMascota);
 		m1.setPropietario(p1);

@@ -9,57 +9,40 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "propietarios")
 public class Propietario extends Persona {
-	
+
+	@Builder
+	public Propietario(Long id, String nombre, String apellido, String direccion, String ciudad, String telefono,
+			Set<Mascota> mascotas) {
+		super(id, nombre, apellido);
+		this.direccion = direccion;
+		this.ciudad = ciudad;
+		
+		
+	}
+
 	@Column(name = "direccion")
 	private String direccion;
-	
+
 	@Column(name = "ciudad")
 	private String ciudad;
-	
+
 	@Column(name = "telefono")
 	private String telefono;
-	
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "propietario")
 	private Set<Mascota> mascotas = new HashSet<>();
-	
-	// GETTERS & SETTERS
-	public String getDireccion() {
-		return direccion;
-	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getCiudad() {
-		return ciudad;
-	}
-
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public Set<Mascota> getMascotas() {
-		return mascotas;
-	}
-
-	public void setMascotas(Set<Mascota> mascotas) {
-		this.mascotas = mascotas;
-	}
-
-	
-	
-	
 }

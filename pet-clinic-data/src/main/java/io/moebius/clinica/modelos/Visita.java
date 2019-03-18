@@ -8,6 +8,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "visitas")
 public class Visita extends EntidadBase{
@@ -22,26 +33,8 @@ public class Visita extends EntidadBase{
 	@JoinColumn(name = "mascota_id")
 	private Mascota mascota;
 	
-	
 	public LocalDate getFecha() {
 		return fecha;
-	}
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
-	}
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-	public Mascota getMascota() {
-		return mascota;
-	}
-	public void setMascota(Mascota mascota) {
-		this.mascota = mascota;
-	}
-	
-	
+	}	
 	
 }

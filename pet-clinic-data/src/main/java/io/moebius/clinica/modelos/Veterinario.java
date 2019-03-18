@@ -10,6 +10,17 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "veterinarios")
 public class Veterinario extends Persona {
@@ -19,17 +30,5 @@ public class Veterinario extends Persona {
 			joinColumns = @JoinColumn(name = "veterinario_id"),
 			inverseJoinColumns = @JoinColumn(name = "especialidad_id"))
 	private Set<Especialidad> especialidades = new HashSet<>();
-	
-	
-	
-	public Set<Especialidad> getEspecialidades() {
-		return especialidades;
-	}
-
-	public void setEspecialidades(Set<Especialidad> especialidades) {
-		this.especialidades = especialidades;
-	}
-	
-	
 	
 }
